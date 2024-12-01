@@ -759,9 +759,6 @@ export type ExperienceSlice = prismic.SharedSlice<
   ExperienceSliceVariation
 >;
 
-/**
- * Primary content in *Hero → Primary*
- */
 export interface HeroSliceDefaultPrimary {
   /**
    * First Name field in *Hero → Primary*

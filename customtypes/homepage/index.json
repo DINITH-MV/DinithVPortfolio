@@ -14,7 +14,7 @@
             "tech_list": {
               "type": "SharedSlice"
             },
-            "experience": {
+            "certificate": {
               "type": "SharedSlice"
             },
             "blog_post_index": {

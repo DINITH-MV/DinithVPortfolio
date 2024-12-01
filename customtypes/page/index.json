@@ -17,7 +17,7 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "experience": {
+            "certificate": {
               "type": "SharedSlice"
             },
             "text_block": {

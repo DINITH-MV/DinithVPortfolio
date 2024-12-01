@@ -1,105 +1,122 @@
 [
 	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "default",
-		"primary": {
-			"heading": {
+	  "__TYPE__": "SharedSliceContent",
+	  "variation": "default",
+	  "primary": {
+		"title": {
+		  "__TYPE__": "FieldContent",
+		  "value": "certificates",
+		  "type": "Text"
+		}
+	  },
+	  "items": [
+		{
+		  "__TYPE__": "GroupItemContent",
+		  "value": [
+			[
+			  "certification_name",
+			  {
 				"__TYPE__": "FieldContent",
 				"type": "Text",
-				"value": "Experience"
-			}
+				"value": "Certified React Developer"
+			  }
+			],
+			[
+			  "issuing_organization",
+			  {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Tech Institute"
+			  }
+			],
+			[
+			  "issue_date",
+			  {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "2023-01-01"
+			  }
+			],
+			[
+			  "expiration_date",
+			  {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "2026-01-01"
+			  }
+			],
+			[
+			  "description",
+			  {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+				  {
+					"type": "paragraph",
+					"content": {
+					  "text": "A certificate recognizing proficiency in React.js, awarded by Tech Institute after completing the React Developer course.",
+					  "spans": []
+					},
+					"direction": "ltr"
+				  }
+				]
+			  }
+			]
+		  ]
 		},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
+		{
+		  "__TYPE__": "GroupItemContent",
+		  "value": [
+			[
+			  "certification_name",
+			  {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Advanced JavaScript"
+			  }
+			],
+			[
+			  "issuing_organization",
+			  {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Programming Academy"
+			  }
+			],
+			[
+			  "issue_date",
+			  {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "2022-06-01"
+			  }
+			],
+			[
+			  "expiration_date",
+			  {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "2025-06-01"
+			  }
+			],
+			[
+			  "description",
+			  {
+				"__TYPE__": "StructuredTextContent",
 				"value": [
-					[
-						"title",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Senior Interactive Designer"
-						}
-					],
-					[
-						"time_period",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "2019 - Present"
-						}
-					],
-					[
-						"institution",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Google"
-						}
-					],
-					[
-						"description",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Led the design team in creating visually stunning and interactive web experiences. Implemented cutting-edge UI/UX designs, collaborated with developers to bring concepts to life, and ensured brand consistency across digital platforms.",
-										"spans": []
-									},
-									"direction": "ltr"
-								}
-							]
-						}
-					]
+				  {
+					"type": "paragraph",
+					"content": {
+					  "text": "This certificate proves advanced knowledge in JavaScript, including ES6 features, asynchronous programming, and DOM manipulation.",
+					  "spans": []
+					},
+					"direction": "ltr"
+				  }
 				]
-			},
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": [
-					[
-						"title",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Senior Interactive Designer"
-						}
-					],
-					[
-						"time_period",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "2019 - Present"
-						}
-					],
-					[
-						"institution",
-						{
-							"__TYPE__": "FieldContent",
-							"type": "Text",
-							"value": "Google"
-						}
-					],
-					[
-						"description",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
-								{
-									"type": "paragraph",
-									"content": {
-										"text": "Led the design team in creating visually stunning and interactive web experiences. Implemented cutting-edge UI/UX designs, collaborated with developers to bring concepts to life, and ensured brand consistency across digital platforms.",
-										"spans": []
-									},
-									"direction": "ltr"
-								}
-							]
-						}
-					]
-				]
-			}
-		]
+			  }
+			]
+		  ]
+		}
+	  ]
 	}
-]
+  ]
+  
