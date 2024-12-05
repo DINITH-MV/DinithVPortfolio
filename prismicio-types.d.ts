@@ -4,49 +4,60 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = never;
+type PageDocumentDataSlicesSlice = never;
 
 /**
- * Content for Homepage documents
+ * Content for Page documents
  */
-interface HomepageDocumentData {
+interface PageDocumentData {
   /**
-   * Slice Zone field in *Homepage*
+   * Title field in *Page*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
+  /**
+   * Slice Zone field in *Page*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.slices[]
+   * - **API ID Path**: page.slices[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<HomepageDocumentDataSlicesSlice> /**
-   * Meta Title field in *Homepage*
+  slices: prismic.SliceZone<PageDocumentDataSlicesSlice> /**
+   * Meta Title field in *Page*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: homepage.meta_title
+   * - **API ID Path**: page.meta_title
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */;
   meta_title: prismic.KeyTextField;
 
   /**
-   * Meta Description field in *Homepage*
+   * Meta Description field in *Page*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: homepage.meta_description
+   * - **API ID Path**: page.meta_description
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   meta_description: prismic.KeyTextField;
 
   /**
-   * Meta Image field in *Homepage*
+   * Meta Image field in *Page*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: homepage.meta_image
+   * - **API ID Path**: page.meta_image
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#image
    */
@@ -54,22 +65,83 @@ interface HomepageDocumentData {
 }
 
 /**
- * Homepage document from Prismic
+ * Page document from Prismic
  *
- * - **API ID**: `homepage`
- * - **Repeatable**: `false`
+ * - **API ID**: `page`
+ * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type HomepageDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<HomepageDocumentData>,
-    "homepage",
-    Lang
-  >;
+export type PageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = HomepageDocument;
+export type AllDocumentTypes = PageDocument;
+
+/**
+ * Primary content in *MainPage → Default → Primary*
+ */
+export interface MainPageSliceDefaultPrimary {
+  /**
+   * First Name field in *MainPage → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: main_page.default.primary.first_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  first_name: prismic.KeyTextField;
+
+  /**
+   * Last Name field in *MainPage → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: main_page.default.primary.last_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  last_name: prismic.KeyTextField;
+
+  /**
+   * Tag Line field in *MainPage → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: main_page.default.primary.tag_line
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tag_line: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for MainPage Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MainPageSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MainPageSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *MainPage*
+ */
+type MainPageSliceVariation = MainPageSliceDefault;
+
+/**
+ * MainPage Shared Slice
+ *
+ * - **API ID**: `main_page`
+ * - **Description**: MainPage
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MainPageSlice = prismic.SharedSlice<
+  "main_page",
+  MainPageSliceVariation
+>;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -92,10 +164,14 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      HomepageDocument,
-      HomepageDocumentData,
-      HomepageDocumentDataSlicesSlice,
+      PageDocument,
+      PageDocumentData,
+      PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      MainPageSlice,
+      MainPageSliceDefaultPrimary,
+      MainPageSliceVariation,
+      MainPageSliceDefault,
     };
   }
 }
