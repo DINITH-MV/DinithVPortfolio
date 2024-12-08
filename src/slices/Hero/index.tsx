@@ -87,11 +87,11 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             <span className="block text-[#76c952]">
               {renderLetters(slice.primary.first_name, "first")}
             </span>
-            <span className="-mt-[.2em] block text-[#4d942f]">
+            <span className="-mt-[.2em] block text-[#599f3b]">
               {renderLetters(slice.primary.last_name, "last")}
             </span>
           </h1>
-            <div className="job-title ml-[40px] block bg-gradient-to-tr from-[#e68906] via-[#eac28a] to-[#e68906] bg-clip-text  text-right font-bold uppercase tracking-[.2em] text-transparent opacity-0 md:text-4xl">
+            <div className="job-title ml-[40px] block bg-gradient-to-tr from-[#e68906] via-[#eac28a] to-[#e68906] bg-clip-text  text-right text-2xl font-bold uppercase tracking-[.2em] text-transparent opacity-0 md:text-4xl">
               {slice.primary.tag_line_1} {slice.primary.tag_line_2}
             </div>
             <div className="job-title mt-[5px] block bg-gradient-to-tr from-[#e68906] to-[#eac28a] bg-clip-text text-right text-2xl font-bold uppercase tracking-[.2em] text-transparent opacity-0 md:text-4xl">
