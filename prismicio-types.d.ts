@@ -4,7 +4,10 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type AboutDocumentDataSlicesSlice = BiographySlice;
+type AboutDocumentDataSlicesSlice =
+  | ExperienceSlice
+  | TechListSlice
+  | BiographySlice;
 
 /**
  * Content for About documents
@@ -165,7 +168,6 @@ export type BlogPostDocument<Lang extends string = string> =
 
 type HomepageDocumentDataSlicesSlice =
   | TechListSlice
-  | ExperienceSlice
   | BlogPostIndexSlice
   | BiographySlice
   | HeroSlice;
@@ -789,6 +791,16 @@ export interface ExperienceSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   description: prismic.RichTextField;
+
+  /**
+   * Cover Image field in *Experience → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: experience.items[].cover_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  cover_image: prismic.ImageField<never>;
 }
 
 /**

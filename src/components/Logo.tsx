@@ -7,7 +7,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
 import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
 
-export default function Avatar({
+export default function Logo({
   image,
   className,
 }: {
@@ -53,7 +53,6 @@ export default function Avatar({
           .to(
             ".avatar",
             {
-              rotation: gsap.utils.clamp(-2, 2, 5 * componentPercent.x),
               duration: 0.5,
             },
             0,
@@ -73,17 +72,16 @@ export default function Avatar({
   }, [prefersReducedMotion]);
 
   return (
-    <div ref={component} className={clsx("relative h-full w-full", className)}>
+    <div ref={component} className={clsx("relative max-w-[300px]")}>
       <div
-        className="avatar aspect-square overflow-hidden rounded-3xl border-[3px] border-[#fff] opacity-0"
-        style={{ perspective: "400px", perspectiveOrigin: "150% 150%" }}
+        className="avatar border-[3px] p-[10px] rounded-[13px] overflow-hidden border-[#b1b0b0] opacity-0"
       >
         <PrismicNextImage
           field={image}
-          className="avatar-image h-full w-full rounded-3xl p-[10px] object-fill"
+          className="avatar-image w-full p-[10px] object-fill"
           imgixParams={{ q: 90 }}
         />
-        <div className="highlight absolute inset-0 hidden w-full scale-110 bg-gradient-to-tr from-transparent via-white to-transparent opacity-0 md:block"></div>
+        <div className="highlight absolute inset-0 hidden bg-gradient-to-tr from-transparent via-white to-transparent opacity-0 md:block"></div>
       </div>
     </div>
   );

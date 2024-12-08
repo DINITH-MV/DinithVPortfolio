@@ -15,7 +15,7 @@ export default async function Footer() {
   const settings = await client.getSingle("settings");
   return (
     <Bounded1 as="footer" className="text-[#000]">
-        <div className="mx-[40px]">
+        <div className="mx-[40px] -mt-[20px]">
       <div className="container mx-auto flex flex-col items-center justify-between gap-6 py-1 sm:flex-row ">
         <div className="name flex flex-col items-center justify-center gap-x-4 gap-y-2 sm:flex-row sm:justify-self-start">
           <Link
