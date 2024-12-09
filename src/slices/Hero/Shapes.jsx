@@ -38,7 +38,7 @@ function Geometries() {
     {
       position: [0, 1.27, 1],
       r: 0.65,
-      geometry: new THREE.TorusKnotGeometry(2.6,.74,104,12,3,18), // Gem
+      geometry: new THREE.TorusKnotGeometry(2.5,.68,121,12,18,3), // Gem
       sounds: [
         new Audio("/sounds/Impact1.wav"),
         new Audio("/sounds/Impact2.wav"),
