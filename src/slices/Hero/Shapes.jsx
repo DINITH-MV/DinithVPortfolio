@@ -36,9 +36,9 @@ export function Shapes() {
 function Geometries() {
   const geometries = [
     {
-      position: [0, 1.27, 1],
+      position: [-0.4, 1.27, 1],
       r: 0.65,
-      geometry: new THREE.TorusKnotGeometry(2.5,.68,121,12,18,3), // Gem
+      geometry: new THREE.TorusKnotGeometry(2.5,.74,104,122,213,18), // Gem
       sounds: [
         new Audio("/sounds/Impact1.wav"),
         new Audio("/sounds/Impact2.wav"),
@@ -48,17 +48,21 @@ function Geometries() {
       ]
     },
     {
-      position: [2.5, -1, 1],
-      r: 0.4,
-      geometry: new THREE.TorusKnotGeometry(0.4,.17,220,3,7,30), // Pill
+      position: [1.8, 0, 3],
+      r: 0.65,
+      geometry: new THREE.TorusKnotGeometry(1.2,.5,70,12,3,18), // Gem
       sounds: [
-        new Audio("/sounds/impactLast.mp3"),
+        new Audio("/sounds/Impact1.wav"),
+        new Audio("/sounds/Impact2.wav"),
+        new Audio("/sounds/Impact3.wav"),
+        new Audio("/sounds/Impact4.wav"),
+        new Audio("/sounds/Impact5.wav"),
       ]
     },
     {
-      position: [2.5, 3.27, 1],
+      position: [2.5, 3, -1],
       r: 0.4,
-      geometry: new THREE.IcosahedronGeometry(0.7,0), // Pill
+      geometry: new THREE.IcosahedronGeometry(2.3,0), // Pill
       sounds: [
         new Audio("/sounds/Impact01.wav"),
         new Audio("/sounds/Impact02.wav"),
