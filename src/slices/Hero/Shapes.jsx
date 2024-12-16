@@ -52,17 +52,15 @@ function Geometries() {
       r: 0.65,
       geometry: new THREE.TorusKnotGeometry(1.2,.5,70,12,3,18), // Gem
       sounds: [
-        new Audio("/sounds/Impact1.wav"),
-        new Audio("/sounds/Impact2.wav"),
-        new Audio("/sounds/Impact3.wav"),
-        new Audio("/sounds/Impact4.wav"),
-        new Audio("/sounds/Impact5.wav"),
+        new Audio("/sounds/Spin1.wav"),
+        new Audio("/sounds/Spin2.wav"),
+        new Audio("/sounds/Spin3.wav"),
       ]
     },
     {
       position: [2.5, 3, -1],
       r: 0.4,
-      geometry: new THREE.IcosahedronGeometry(2.3,0), // Pill
+      geometry: new THREE.IcosahedronGeometry(1.7,0), // Pill
       sounds: [
         new Audio("/sounds/Impact01.wav"),
         new Audio("/sounds/Impact02.wav"),
