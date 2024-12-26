@@ -40,11 +40,12 @@ function Geometries() {
       r: 0.65,
       geometry: new THREE.TorusKnotGeometry(2.5,.74,104,122,213,18), // Gem
       sounds: [
-        new Audio("/sounds/Impact1.wav"),
-        new Audio("/sounds/Impact2.wav"),
-        new Audio("/sounds/Impact3.wav"),
-        new Audio("/sounds/Impact4.wav"),
-        new Audio("/sounds/Impact5.wav"),
+        new Audio("/sounds/Impacts01.mp3"),
+        new Audio("/sounds/Impacts02.mp3"),
+        new Audio("/sounds/Impacts03.mp3"),
+      ],
+      materials: [
+        new THREE.MeshStandardMaterial({ color: 0xe2562c, metalness: 0.4, roughness: 0 }),
       ]
     },
     {
@@ -52,9 +53,14 @@ function Geometries() {
       r: 0.65,
       geometry: new THREE.TorusKnotGeometry(1.2,.5,70,12,3,18), // Gem
       sounds: [
-        new Audio("/sounds/Spin1.wav"),
-        new Audio("/sounds/Spin2.wav"),
-        new Audio("/sounds/Spin3.wav"),
+        new Audio("/sounds/Impact1.wav"),
+        new Audio("/sounds/Impact2.wav"),
+        new Audio("/sounds/Impact3.wav"),
+        new Audio("/sounds/Impact4.wav"),
+        new Audio("/sounds/Impact5.wav"),
+      ],      
+      materials: [
+        new THREE.MeshStandardMaterial({ color: 0x2ecc71, metalness: 0.4, roughness: 0 }),
       ]
     },
     {
@@ -67,22 +73,15 @@ function Geometries() {
         new Audio("/sounds/Impact03.wav"),
         new Audio("/sounds/Impact04.wav"),
         new Audio("/sounds/Impact05.wav"),
+      ],      
+      materials: [
+        new THREE.MeshStandardMaterial({ color: 0xe8a317, metalness: 0.4, roughness: 0.1 }),
+       
       ]
     }
   ];
 
-  const materials = [
-    new THREE.MeshStandardMaterial({ color: 0x2ecc71, metalness: 0.4, roughness: 0 }),
-    new THREE.MeshStandardMaterial({ color: 0xe74c3c, roughness: 0.1 }),
-    new THREE.MeshStandardMaterial({ color: 0xe8a317, metalness: 0.4, roughness: 0.1 }),
-    new THREE.MeshStandardMaterial({
-      roughness: 0,
-      metalness: 0.1,
-      color: 0x2980b9,
-    }),
-  ];
-
-  return geometries.map(({ position, r, geometry, sounds }) => (
+  return geometries.map(({ position, r, geometry, sounds, materials }) => (
     <Geometry
       key={JSON.stringify(position)} // Unique key
       position={position.map((p) => p * 2)}
